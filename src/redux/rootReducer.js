@@ -1,6 +1,6 @@
 import { combineReducers } from "redux";
-import { likeReducer } from "./likeReducer";
+import { likesReducer } from "./likesReducer";
 
 export const rootReducer = combineReducers({
-  likes: likeReducer,
+  likesReducer,
 });
