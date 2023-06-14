@@ -1,7 +1,7 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import uniqid from "uniqid";
-import { commentCreate } from "./redux/actions";
+import { commentCreate, commentLoad } from "./redux/actions";
 import SingleComment from "./SingleComment";
 
 function Comments(props) {
@@ -16,6 +16,10 @@ function Comments(props) {
   const handleInput = (event) => {
     setTextComment(event.target.value);
   };
+
+  useEffect(() => {
+    dispatch(commentLoad());
+  }, []);
 
   const handleSubmit = (event) => {
     event.preventDefault();
