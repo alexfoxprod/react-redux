@@ -22,9 +22,9 @@ function Comments(props) {
     console.log("submit text", textComment);
     const id = uniqid();
     dispatch(commentCreate(textComment, id));
+    setTextComment("");
   };
 
-  console.log("Commnets =>", comments);
   return (
     <div className="card-comments">
       <form onSubmit={handleSubmit} className="comments-item-create">
